@@ -1,0 +1,42 @@
+# R project files
+*.xlsx
+*.xlsb
+.Rhistory
+.RData
+.Rproj.user/
+.Rproj*
+
+# R package files
+*.tar.gz
+*.Rcheck/
+src/*.so
+
+# R Markdown files
+*.html
+*.pdf
+*.docx
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# RStudio files
+.Rhistory
+.Rapp.history
+
+# macOS system files
+.DS_Store
+
+# Windows Thumbs.db files
+Thumbs.db
+
+# Emacs temporary files
+*~
+\#*\#
+
+# Vim temporary files
+.*.swp
+
+# Sublime Text workspace files
+*.sublime-workspace
+
+2022_12/
