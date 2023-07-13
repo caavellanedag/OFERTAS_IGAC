@@ -47,3 +47,14 @@ Thumbs.db
 
 Gestores_Habilitados.gdb/*
 Gestores_Habilitados.gdb
+BASE_GEOGRAFICA_COMPLETA.gdb
+BASE_GEOGRAFICA_COMPLETA.gdb*
+BASE_GEOGRAFICA_COMPLETA.gdb/*
+*.gdb
+*.gdb*
+
+*.gdb
+*.gdb/**/*
+
+BASE_GEOGRAFICA_COMPLETA/**/*
+BASE_GEOGRAFICA_COMPLETA*
