@@ -40,6 +40,9 @@ Thumbs.db
 *.sublime-workspace
 
 2022_12/
+2023_05/*
+2023_05/
+2023_05
 
 *.csv
 *.rds 
