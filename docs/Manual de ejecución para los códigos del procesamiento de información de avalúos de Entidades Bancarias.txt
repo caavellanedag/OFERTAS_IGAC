@@ -1,0 +1,52 @@
+# Manual de ejecución para los códigos del procesamiento de información de avalúos de Entidades Bancarias.
+
+En este manual se detalla el objetivo y la forma de ejecución para los códigos generados para el procesamiento de inforación de avalúos reportados por Entidades Bancarias. Este proceso se divide en tres partes o códigos. Estos se mencionan a continuación:
+
+* 230605_PROCESAMIENTO_OFERTAS.ipynb
+* 230725_REVISION_RESULTADOS_GEORREFERENCIACION_OFERTAS.ipynb
+* 230620_CODIGO_PEGUE_R1_MATRICULA.ipynb
+
+El objetivo de estos scripts es que a partir de la información reportada se obtenga un número predial nacional (de 30 dígitos) utilizando la dirección y matrícula inmobiliaria que se tienen en el archivo que sirve como insumo. A continuación se presenta un resumen y las características generales de cada uno de los tres scripts mencionados anteriormente.
+
+En cada uno de los códigos, el primer paso es la carga de paquetes. La instalación de los paquetes que sean requeridos en cada uno de los equipos se lleva a cabo a partir del siguiente comando (utilizando la librería de pandas como ejemplo).
+
+pip install pandas
+
+##  230605_PROCESAMIENTO_OFERTAS.ipynb
+
+En este código se realiza el proceso de Georreferenciación de las direcciones incluidas en el insumo inicial. Este código devuelve un archivo con las direcciones, su localización en términos de latitud y longitud, y una calificación de esta geolocalización, de forma que se pueden descartar aquellos casos donde el proceso no fue exitoso.
+
+
+- Ejecución de las librerías requeridas.
+- Lectura de las tablas requeridas para el análisis a realizar.
+- Se debe garantizar la existencia de las tablas en las rutas que se especifican en el programa.
+- Procesamiento, limpieza y alistamiento sobre el campo de direcciones.
+- Ejecución de la función geocoder_igac(.) sobre las direcciones procesadas.
+- Export de resultados
+
+
+## 230725_REVISION_RESULTADOS_GEORREFERENCIACION_OFERTAS.ipynb
+
+A partir de las direcciones y sus respectivas geolocalizaciones, en este código se realiza la consolidación de resultados con respecto a la base de avalúos inicial. De manera adicional, en este código se realiza el cruce espacial entre las coordenadas resultantes y las diferentes capas geográficas para determinar los números prediales nacionales en los casos que sea posible. Allí se realiza un procesamiento adicional, tratando de aproximar las coordenadas a polígonos próximos a ellas con el fin de recuperar la mayor cantidad de información. Este script devuelve la base inicial, complementada con información de los códigos prediales en aquellos casos donde el cruce espacial es exitoso.
+
+- Ejecución de las librerías requeridas.
+- Lectura de las tablas requeridas para el análisis a realizar.
+- Se debe garantizar la existencia de las tablas en las rutas que se especifican en el programa.
+- Alistamiento de las variables. Se realizan los cruces, pegues y transformaciones requeridas.
+- Lectura de la función function_join_shp(.), la cual realiza el cruce espacial entre las capas geográficas y las coordenadas obtenidas en pasos anteriores.
+- Alistamiento final de la base y validaciones correspondientes.
+- Export de resultados
+
+
+## 230620_CODIGO_PEGUE_R1_MATRICULA.ipynb
+
+Por último, en este código se consolida la información de los códigos provenientes de la georreferenciación y de la información dispuesta en el R1, en la búsqueda de los casos donde se puede cruzar información a partir de la matrícula inmobiliaria. De esta forma, este código devuelve la base final, consolidando todos estos proceso. Los pasos de ejecución se detallan a continuación:
+
+- Ejecución de las librerías requeridas.
+- Lectura de las tablas requeridas para el análisis a realizar.
+- Se debe garantizar la existencia de las tablas en las rutas que se especifican en el programa.
+- Alistamiento de las variables. Se realizan los cruces, pegues y transformaciones requeridas.
+- Procesamiento sobre las matrículas
+- Cruce de la base georreferenciada con el R1
+- Alistamiento final de la base y validaciones correspondientes.
+- Export de resultados
